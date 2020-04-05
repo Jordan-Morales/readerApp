@@ -2,27 +2,51 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet"
     href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
     <link rel="stylesheet" href="style.css">
-    <title></title>
+
+    <!-- <script src="js/app.js" charset="utf-8"></script> -->
+
+    <title>App</title>
   </head>
+
+
   <body>
+    <!-- Page 1 -->
     <div data-role="page" id="page1" data-theme="a">
       <div data-role="header">
         <h1>Page 1</h1>
       </div>
       <div role="main" class="ui-content">
-        <p>Content</p>
+        <a data-role="button" href="#page2" data-transition="flip">Go to page 2</a>
+        <a data-role="button" href="dialogue.html" data-transition="slide" data-rel="dialogue" data-theme="b">Open Dialogue</a>
       </div>
       <div data-role="footer" data-position="fixed">
         <h1>Footer</h1>
       </div>
     </div>
-
-
+<!-- End Page 1 -->
+<!-- Page 2 -->
+    <div data-role="page" id="page2" data-theme="b">
+      <div data-role="header">
+        <h1>Page 2</h1>
+      </div>
+      <div role="main" class="ui-content">
+        <a data-role="button" href="#page1" data-transition="pop">Go to page 1</a>
+      </div>
+      <div data-role="footer" data-position="fixed">
+        <h1>Footer</h1>
+      </div>
+    </div>
+<!-- End Page 2 -->
   </body>
 </html>
