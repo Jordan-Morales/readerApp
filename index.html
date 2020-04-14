@@ -4,17 +4,24 @@
     <meta charset="utf-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-å
+
+    <link rel="stylesheet" href="3rd/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script> -->
+
     <link rel="stylesheet"
-    href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    href="3rd/jquery.mobile-1.4.5.min.css" />
 
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="3rd/jquery-1.11.1.min.js"></script>
 
-    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="3rd/jquery.mobile-1.4.5.min.js"></script>
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- <script src="js/app.js" charset="utf-8"></script> -->
+    <script src="js/app.js" charset="utf-8"></script>
 
     <title>App</title>
   </head>
@@ -22,22 +29,130 @@
 
   <body>
     <!-- Page 1 -->
-    <div data-role="page" id="page1" data-theme="a">
+    <div data-role="page" id="page1" data-theme="b">
       <div data-role="header">
         <div data-role="navbar">
           <ul>
-            <li> <a href="#page1" dat-transition="pop" data-icon="home" class="ui-btn-active ui-state-persist">Home</a> </li>
-            <li> <a href="#page2" dat-transition="pop" data-icon="info" >About</a> </li>
+            <li> <a href="#page1" dat-transition="pop" data-icon="home" class="ui-btn-active ui-state-persist">Dice</a> </li>
+            <li> <a href="#page2" dat-transition="pop" data-icon="info" >Settings</a> </li>
             <li> <a href="#page3" dat-transition="pop" data-icon="mail" >Contact</a> </li>
           </ul>
         </div>
       </div>
       <div role="main" class="ui-content">
-        <a data-role="button" href="#page2" data-transition="flip">Go to page 2</a>
-        <a data-role="button" href="dialogue.html" data-transition="slide" data-rel="dialogue" data-theme="b">Open Dialogue</a>
-      </div>
-      <div data-role="footer" data-position="fixed">
-        <h1>Footer</h1>
+        <!-- // Main Dice Page -->
+        <div class="container">
+          <h6 class="center">Click on dice to hide/show.</h6>
+          <div class="row dieRow">
+            <img src="img/d4.png" class="toggleImg" id="d4Toggle" height="10%" width="10%" alt="">
+            <img src="img/d6.png" class="toggleImg" id="d6Toggle" height="10%" width="10%" alt="">
+            <img src="img/d8.png" class="toggleImg" id="d8Toggle" height="10%" width="10%" alt="">
+            <img src="img/d20.png" class="toggleImg" id="d20Toggle" height="10%" width="10%" alt="">
+          </div>
+          <div class="row titleRow">
+            <div class="col">
+              <span class="title">
+                How Many?</span>
+            </div>
+            <div class="col">
+              <span class="title">
+                Dice Type</span>
+            </div>
+            <div class="col">
+              <span class="title">
+                Rolled Die</span>
+            </div>
+            <div class="col">
+              <span class="title">
+                Total</span>
+            </div>
+          </div>
+          <div class="row dieFourRow">
+            <div class="col">
+              <input type="number" min="1" value="1" style="text-align:center;" name="dieFourInput" id="dieFourInput">
+            </div>
+            <div class="col">
+                <img src="img/d4.png" id="die4" class="buttonDie" height="auto" width="100%" alt="" data-role="button">
+            </div>
+            <div class="col">
+              <ul id="dieFourResultLog" class="resultLog">
+              </ul>
+            </div>
+            <div class="col" >
+              Result: <span id="resultFour"></span>
+            </div>
+          </div>
+
+
+
+          <div class="row dieSixRow">
+            <div class="col">
+              <input type="number" min="1" value="1" style="text-align:center;" name="dieSixInput" id="dieSixInput">
+            </div>
+            <div class="col">
+                <img src="img/d6.png" id="die6" class="buttonDie" height="auto" width="100%" alt="" data-role="button">
+            </div>
+            <div class="col">
+              <ul id="dieSixResultLog" class="resultLog">
+              </ul>
+            </div>
+            <div class="col" >
+              Result: <span id="resultSix"></span>
+            </div>
+          </div>
+
+          <div class="row dieEightRow">
+            <div class="col">
+              <input type="number" min="1" value="1" style="text-align:center;" name="dieEightInput" id="dieEightInput">
+            </div>
+            <div class="col">
+                <img src="img/d8.png" id="die8" class="buttonDie" height="auto" width="100%" alt="" data-role="button">
+            </div>
+            <div class="col">
+              <ul id="dieEightResultLog" class="resultLog">
+              </ul>
+            </div>
+            <div class="col" >
+              Result: <span id="resultEight"></span>
+            </div>
+          </div>
+
+          <div class="row dieTwentyRow">
+            <div class="col">
+              <input type="number" min="1" value="1" style="text-align:center;" name="dieTwentyInput" id="dieTwentyInput">
+            </div>
+            <div class="col">
+                <img src="img/d20.png" id="die20" class="buttonDie" height="auto" width="100%" alt="" data-role="button">
+            </div>
+            <div class="col">
+              <ul id="dieTwentyResultLog" class="resultLog">
+              </ul>
+            </div>
+            <div class="col" >
+              Result: <span id="resultTwenty"></span>
+            </div>
+          </div>
+
+          <!-- <div class="row">
+            <div class="col">
+              <input type="number" name="die_Input" id="die_Input">
+            </div>
+            <div class="col">
+              <button id="die_Button">
+                <img src="img/d_.png" height="50%" width="50%" alt="">
+                Roll _
+              </button>
+            </div>
+            <div class="col">
+              <ul id="die_ResultLog" class="resultLog">
+              </ul>
+            </div>
+            <div class="col" >
+              Result: <span id="result_"></span>
+            </div>
+          </div> -->
+
+        </div>
       </div>
     </div>
 <!-- End Page 1 -->
@@ -46,17 +161,14 @@
       <div data-role="header">
         <div data-role="navbar">
           <ul>
-            <li> <a href="#page1" dat-transition="pop" data-icon="home" >Home</a> </li>
-            <li> <a href="#page2" dat-transition="pop" data-icon="info" class="ui-btn-active ui-state-persist">About</a> </li>
+            <li> <a href="#page1" dat-transition="pop" data-icon="home" >Dice</a> </li>
+            <li> <a href="#page2" dat-transition="pop" data-icon="info" class="ui-btn-active ui-state-persist">Settings</a> </li>
             <li> <a href="#page3" dat-transition="pop" data-icon="mail" >Contact</a> </li>
           </ul>
         </div>
       </div>
       <div role="main" class="ui-content">
-        <a data-role="button" href="#page1" data-transition="pop">Go to page 1</a>
-      </div>
-      <div data-role="footer" data-position="fixed">
-        <h1>Footer</h1>
+        <a data-role="button" href="dialogue.html" data-transition="slide" data-rel="dialogue" data-theme="b">Open Dialogue</a>
       </div>
     </div>
 <!-- End Page 2 -->
@@ -65,30 +177,17 @@
       <div data-role="header">
         <div data-role="navbar">
           <ul>
-            <li> <a href="#page1" dat-transition="pop" data-icon="home" >Home</a> </li>
-            <li> <a href="#page2" dat-transition="pop" data-icon="info" >About</a> </li>
+            <li> <a href="#page1" dat-transition="pop" data-icon="home" >Dice</a> </li>
+            <li> <a href="#page2" dat-transition="pop" data-icon="info" >Settings</a> </li>
             <li> <a href="#page3" dat-transition="pop" data-icon="mail" class="ui-btn-active ui-state-persist">Contact</a> </li>
           </ul>
         </div>
       </div>
       <div role="main" class="ui-content">
-        <div class="ui-grid-b">
           <div class="ui-block-a">
             <a href="#" data-role="button">Email</a>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           </div>
-          <div class="ui-block-b">
-            <a href="#" data-role="button">Chat</a>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
-          </div>
-          <div class="ui-block-c">
-            <a href="#" data-role="button">Phone</a>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco </p>
-          </div>
-        </div>
-      </div>
-      <div data-role="footer" data-position="fixed">
-        <h1>Footer</h1>
       </div>
     </div>
 <!-- End Page 3 -->
