@@ -169,6 +169,18 @@
       </div>
       <div role="main" class="ui-content">
         <a data-role="button" href="dialogue.html" data-transition="slide" data-rel="dialogue" data-theme="b">Open Dialogue</a>
+        <form action="/action_page.php">
+          <input list="themes">
+          <label for="themes">Choose a Theme:</label>
+          <select id="themes">
+            <option value="Primary">Primary</option>
+            <option value="Wood">Wood</option>
+            <option value="Other1">Other1</option>
+            <option value="Other2">Other2</option>
+            <option value="Other3">Other3</option>
+          </select>
+          <button class="ui-btn">Change Theme</button>
+        </form>
       </div>
     </div>
 <!-- End Page 2 -->

@@ -9,6 +9,12 @@
 $ (() => {
 
 
+// theme changer
+
+// changing theme needs to do the following
+// toggleImg buttonDie need to change src="img/primary/*" -> src="img/wood/*"
+
+
 // hide all die rows
   $('.dieFourRow').hide();
   $('.dieSixRow').hide();
