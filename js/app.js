@@ -1,20 +1,12 @@
-// console.log($);
-// const express = require('express')
-// const cors = require('cors')
-// const app = express()
 
-// linked
 
 //jQuery
 $ (() => {
+  let themeSelected = "";
+  let colorSelected;
 
-// theme changer
-let themeSelected = "primary";
-
-$('#themeSelector').on('click', () => {
-  themeSelected = $('#themes option:selected').val();
-  console.log(themeSelected);
-  // location.reload(true);
+// theme setter
+let themeSetter = () => {
   $('#d4Toggle').attr("src", ("/img/" + themeSelected + "/d4.png"));
   $('#die4').attr("src", ("/img/" + themeSelected + "/d4.png"));
 
@@ -33,7 +25,50 @@ $('#themeSelector').on('click', () => {
   $('#d20Toggle').attr("src", ("/img/" + themeSelected + "/d20.png"))
   $('#die20').attr("src", ("/img/" + themeSelected + "/d20.png"))
 
+  $('.row').removeClass(themeSelected).removeClass('PrimaryTheme').removeClass('WoodTheme');
+  $('.row').addClass(themeSelected + 'Theme');
+  $('.toggleImg').removeClass(themeSelected).removeClass('PrimaryTheme').removeClass('WoodTheme');
+  $('.toggleImg').addClass(themeSelected + 'Theme');
+
+  if (themeSelected === 'Primary') {
+    $('#label').removeClass("whiteText").addClass('blackText')
+    $('.page').removeClass("Dark");
+    $('.page').addClass("Light");
+    $('html').removeClass("Dark");
+    $('html').addClass("Light");
+  } else if (themeSelected === "Wood") {
+    $('#label').removeClass("blackText").addClass('whiteText')
+    $('.page').removeClass("Light");
+    $('.page').addClass("Dark");
+    $('html').removeClass("Light");
+    $('html').addClass("Dark");
+  } else {
+    console.log('broken');
+  }
+}
+
+
+// localStorage
+if (localStorage && localStorage.getItem("themeSelected")) {
+  themeSelected = localStorage.getItem("themeSelected");
+  // console.log("This is local storage theme " + themeSelected);
+  themeSetter();
+} else if (localStorage){
+  localStorage.setItem("themeSelected", "primary");
+} else {
+  // Sorry! No Web Storage support..
+  // console.log("Local storage not working.");
+  themeSelected = "primary"
+  themeSetter();
+}
+
+// theme changer
+$('#themeSelector').on('click', () => {
+  themeSelected = $("#themes option:selected").val();
+  localStorage.setItem("themeSelected", themeSelected);
+  themeSetter();
 })
+
 
 // changing theme needs to do the following
 // toggleImg buttonDie need to change src="img/primary/*" -> src="img/wood/*"
@@ -86,7 +121,8 @@ $('#themeSelector').on('click', () => {
       let newone = el.clone(true);
       el.replaceWith(newone);
       // add spin class
-      $('#die4').addClass('buttonDieSpin');
+      $('#die4').addClass('buttonDieSpin').one('webkitAnimationEnd...', function(){$(this).removeClass('buttonDieSpin')});
+
 
         for (let x = 0; x < repeater; x++) {
             let dieFour = generateRandomFour();
@@ -113,7 +149,7 @@ $('#themeSelector').on('click', () => {
       let newone = el.clone(true);
       el.replaceWith(newone);
       // add spin class
-      $('#die6').addClass('buttonDieSpin');
+      $('#die6').addClass('buttonDieSpin').one('webkitAnimationEnd...', function(){$(this).removeClass('buttonDieSpin')});
 
         for (let x = 0; x < repeater; x++) {
             let dieSix = generateRandomSix();
@@ -140,7 +176,7 @@ $('#themeSelector').on('click', () => {
       let newone = el.clone(true);
       el.replaceWith(newone);
       // add spin class
-      $('#die8').addClass('buttonDieSpin');
+      $('#die8').addClass('buttonDieSpin').one('webkitAnimationEnd...', function(){$(this).removeClass('buttonDieSpin')});
 
         for (let x = 0; x < repeater; x++) {
             let dieEight = generateRandomEight();
@@ -167,7 +203,7 @@ $('#themeSelector').on('click', () => {
       let newone = el.clone(true);
       el.replaceWith(newone);
       // add spin class
-      $('#die10').addClass('buttonDieSpin');
+      $('#die10').addClass('buttonDieSpin').one('webkitAnimationEnd...', function(){$(this).removeClass('buttonDieSpin')});
 
         for (let x = 0; x < repeater; x++) {
             let dieTen = generateRandomTen();
@@ -194,7 +230,7 @@ $('#themeSelector').on('click', () => {
       let newone = el.clone(true);
       el.replaceWith(newone);
       // add spin class
-      $('#die12').addClass('buttonDieSpin');
+      $('#die12').addClass('buttonDieSpin').one('webkitAnimationEnd...', function(){$(this).removeClass('buttonDieSpin')});
 
         for (let x = 0; x < repeater; x++) {
             let dieTwelve = generateRandomTwelve();
@@ -221,7 +257,7 @@ $('#themeSelector').on('click', () => {
       let newone = el.clone(true);
       el.replaceWith(newone);
       // add spin class
-      $('#die20').addClass('buttonDieSpin');
+      $('#die20').addClass('buttonDieSpin').one('webkitAnimationEnd...', function(){$(this).removeClass('buttonDieSpin')});
 
         for (let x = 0; x < repeater; x++) {
             let dieTwenty = generateRandomTwenty();

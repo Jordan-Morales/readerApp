@@ -18,6 +18,16 @@
   margin: 0px;
 }
 
+.row {
+  border: 1px solid;
+  border-radius: 10px;
+}
+
+.toggleImg {
+  border: 1px solid;
+  border-radius: 10px;
+}
+
 .resultLog {
   height: 150px;
   overflow: scroll;
@@ -27,6 +37,7 @@
 .dieRow {
   display: flex;
   justify-content: space-around;
+  border: none;
 }
 
 
@@ -36,7 +47,31 @@
   animation: spin 0.2s 1 linear;
 }
 
+.blackText {
+  color: black;
+}
+.whiteText{
+  color: white;
+  background-color: rgb(88, 88, 88);
+}
 
+.Dark {
+  background-color: rgb(10, 10, 10);
+}
+
+.Light {
+  background-color: rgb(200, 200, 200);
+}
+
+.PrimaryTheme {
+  background-color: rgba(212, 212, 212, 0.7);
+  border-color: rgb(41, 41, 41);
+}
+
+.WoodTheme {
+  background-color: rgba(238, 221, 168, 0.7);
+  border-color: rgb(91, 64, 4);
+}
 
 
 /**********************************
