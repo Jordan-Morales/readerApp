@@ -44,12 +44,12 @@
         <div class="container">
           <h6 class="center">Click on dice to hide/show.</h6>
           <div class="row dieRow">
-            <img src="" class="toggleImg" id="d4Toggle" height="10%" width="10%" alt="">
-            <img src="" class="toggleImg" id="d6Toggle" height="10%" width="10%" alt="">
-            <img src="" class="toggleImg" id="d8Toggle" height="10%" width="10%" alt="">
-            <img src="" class="toggleImg" id="d10Toggle" height="10%" width="10%" alt="">
-            <img src="" class="toggleImg" id="d12Toggle" height="10%" width="10%" alt="">
-            <img src="" class="toggleImg" id="d20Toggle" height="10%" width="10%" alt="">
+            <img src="img/primary/d4.png" class="toggleImg" id="d4Toggle" height="10%" width="10%" alt="">
+            <img src="img/primary/d6.png" class="toggleImg" id="d6Toggle" height="10%" width="10%" alt="">
+            <img src="img/primary/d8.png" class="toggleImg" id="d8Toggle" height="10%" width="10%" alt="">
+            <img src="img/primary/d10.png" class="toggleImg" id="d10Toggle" height="10%" width="10%" alt="">
+            <img src="img/primary/d12.png" class="toggleImg" id="d12Toggle" height="10%" width="10%" alt="">
+            <img src="img/primary/d20.png" class="toggleImg" id="d20Toggle" height="10%" width="10%" alt="">
           </div>
           <div class="row titleRow">
             <div class="col">
@@ -74,7 +74,7 @@
               <input type="number" min="1" value="1" style="text-align:center;" name="dieFourInput" id="dieFourInput">
             </div>
             <div class="col">
-                <img src="" id="die4" class="buttonDie" height="auto" width="100%" alt="" data-role="button">
+                <img src="img/primary/d4.png" id="die4" class="buttonDie" height="auto" width="100%" alt="" data-role="button">
             </div>
             <div class="col">
               <ul id="dieFourResultLog" class="resultLog">
@@ -92,7 +92,7 @@
               <input type="number" min="1" value="1" style="text-align:center;" name="dieSixInput" id="dieSixInput">
             </div>
             <div class="col">
-                <img src="" id="die6" class="buttonDie" height="auto" width="100%" alt="" data-role="button">
+                <img src="img/primary/d6.png" id="die6" class="buttonDie" height="auto" width="100%" alt="" data-role="button">
             </div>
             <div class="col">
               <ul id="dieSixResultLog" class="resultLog">
@@ -108,7 +108,7 @@
               <input type="number" min="1" value="1" style="text-align:center;" name="dieEightInput" id="dieEightInput">
             </div>
             <div class="col">
-                <img src="" id="die8" class="buttonDie" height="auto" width="100%" alt="" data-role="button">
+                <img src="img/primary/d8.png" id="die8" class="buttonDie" height="auto" width="100%" alt="" data-role="button">
             </div>
             <div class="col">
               <ul id="dieEightResultLog" class="resultLog">
@@ -124,7 +124,7 @@
               <input type="number" min="1" value="1" style="text-align:center;" name="dieTenInput" id="dieTenInput">
             </div>
             <div class="col">
-                <img src="" id="die10" class="buttonDie" height="auto" width="100%" alt="" data-role="button">
+                <img src="img/primary/d10.png" id="die10" class="buttonDie" height="auto" width="100%" alt="" data-role="button">
             </div>
             <div class="col">
               <ul id="dieTenResultLog" class="resultLog">
@@ -140,7 +140,7 @@
               <input type="number" min="1" value="1" style="text-align:center;" name="dieTwelveInput" id="dieTwelveInput">
             </div>
             <div class="col">
-                <img src="" id="die12" class="buttonDie" height="auto" width="100%" alt="" data-role="button">
+                <img src="img/primary/d12.png" id="die12" class="buttonDie" height="auto" width="100%" alt="" data-role="button">
             </div>
             <div class="col">
               <ul id="dieTwelveResultLog" class="resultLog">
@@ -156,7 +156,7 @@
               <input type="number" min="1" value="1" style="text-align:center;" name="dieTwentyInput" id="dieTwentyInput">
             </div>
             <div class="col">
-                <img src="" id="die20" class="buttonDie" height="auto" width="100%" alt="" data-role="button">
+                <img src="img/primary/d20.png" id="die20" class="buttonDie" height="auto" width="100%" alt="" data-role="button">
             </div>
             <div class="col">
               <ul id="dieTwentyResultLog" class="resultLog">
@@ -166,6 +166,25 @@
               Result: <span id="resultTwenty"></span>
             </div>
           </div>
+
+          <!-- <div class="row">
+            <div class="col">
+              <input type="number" name="die_Input" id="die_Input">
+            </div>
+            <div class="col">
+              <button id="die_Button">
+                <img src="img/d_.png" height="50%" width="50%" alt="">
+                Roll _
+              </button>
+            </div>
+            <div class="col">
+              <ul id="die_ResultLog" class="resultLog">
+              </ul>
+            </div>
+            <div class="col" >
+              Result: <span id="result_"></span>
+            </div>
+          </div> -->
 
         </div>
       </div>
@@ -184,7 +203,6 @@
       </div>
       <div role="main" class="ui-content">
         <a data-role="button" href="dialogue.html" data-transition="slide" data-rel="dialogue" data-theme="b">Open Dialogue</a>
-        <form action="/action_page.php">
           <input list="themes">
           <label for="themes">Choose a Theme:</label>
           <select id="themes">
@@ -194,8 +212,7 @@
             <option value="Other2">Other2</option>
             <option value="Other3">Other3</option>
           </select>
-          <button class="ui-btn">Change Theme</button>
-        </form>
+          <button id="themeSelector" class="ui-btn">Change Theme</button>
       </div>
     </div>
 <!-- End Page 2 -->

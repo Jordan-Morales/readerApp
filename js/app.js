@@ -8,29 +8,32 @@
 //jQuery
 $ (() => {
 
-
 // theme changer
-
 let themeSelected = "primary";
 
-$('#d4Toggle').attr("src", ("/img/" + themeSelected + "/d4.png"));
-$('#die4').attr("src", ("/img/" + themeSelected + "/d4.png"));
+$('#themeSelector').on('click', () => {
+  themeSelected = $('#themes option:selected').val();
+  console.log(themeSelected);
+  // location.reload(true);
+  $('#d4Toggle').attr("src", ("/img/" + themeSelected + "/d4.png"));
+  $('#die4').attr("src", ("/img/" + themeSelected + "/d4.png"));
 
-$('#d6Toggle').attr("src", ("/img/" + themeSelected + "/d6.png"))
-$('#die6').attr("src", ("/img/" + themeSelected + "/d6.png"))
+  $('#d6Toggle').attr("src", ("/img/" + themeSelected + "/d6.png"))
+  $('#die6').attr("src", ("/img/" + themeSelected + "/d6.png"))
 
-$('#d8Toggle').attr("src", ("/img/" + themeSelected + "/d8.png"))
-$('#die8').attr("src", ("/img/" + themeSelected + "/d8.png"))
+  $('#d8Toggle').attr("src", ("/img/" + themeSelected + "/d8.png"))
+  $('#die8').attr("src", ("/img/" + themeSelected + "/d8.png"))
 
-$('#d10Toggle').attr("src", ("/img/" + themeSelected + "/d10.png"))
-$('#die10').attr("src", ("/img/" + themeSelected + "/d10.png"))
+  $('#d10Toggle').attr("src", ("/img/" + themeSelected + "/d10.png"))
+  $('#die10').attr("src", ("/img/" + themeSelected + "/d10.png"))
 
-$('#d12Toggle').attr("src", ("/img/" + themeSelected + "/d12.png"))
-$('#die12').attr("src", ("/img/" + themeSelected + "/d12.png"))
+  $('#d12Toggle').attr("src", ("/img/" + themeSelected + "/d12.png"))
+  $('#die12').attr("src", ("/img/" + themeSelected + "/d12.png"))
 
-$('#d20Toggle').attr("src", ("/img/" + themeSelected + "/d20.png"))
-$('#die20').attr("src", ("/img/" + themeSelected + "/d20.png"))
+  $('#d20Toggle').attr("src", ("/img/" + themeSelected + "/d20.png"))
+  $('#die20').attr("src", ("/img/" + themeSelected + "/d20.png"))
 
+})
 
 // changing theme needs to do the following
 // toggleImg buttonDie need to change src="img/primary/*" -> src="img/wood/*"
