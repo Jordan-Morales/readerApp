@@ -11,6 +11,27 @@ $ (() => {
 
 // theme changer
 
+let themeSelected = "primary";
+
+$('#d4Toggle').attr("src", ("/img/" + themeSelected + "/d4.png"));
+$('#die4').attr("src", ("/img/" + themeSelected + "/d4.png"));
+
+$('#d6Toggle').attr("src", ("/img/" + themeSelected + "/d6.png"))
+$('#die6').attr("src", ("/img/" + themeSelected + "/d6.png"))
+
+$('#d8Toggle').attr("src", ("/img/" + themeSelected + "/d8.png"))
+$('#die8').attr("src", ("/img/" + themeSelected + "/d8.png"))
+
+$('#d10Toggle').attr("src", ("/img/" + themeSelected + "/d10.png"))
+$('#die10').attr("src", ("/img/" + themeSelected + "/d10.png"))
+
+$('#d12Toggle').attr("src", ("/img/" + themeSelected + "/d12.png"))
+$('#die12').attr("src", ("/img/" + themeSelected + "/d12.png"))
+
+$('#d20Toggle').attr("src", ("/img/" + themeSelected + "/d20.png"))
+$('#die20').attr("src", ("/img/" + themeSelected + "/d20.png"))
+
+
 // changing theme needs to do the following
 // toggleImg buttonDie need to change src="img/primary/*" -> src="img/wood/*"
 
@@ -19,7 +40,10 @@ $ (() => {
   $('.dieFourRow').hide();
   $('.dieSixRow').hide();
   $('.dieEightRow').hide();
+  $('.dieTenRow').hide();
+  $('.dieTwelveRow').hide();
   $('.dieTwentyRow').hide();
+
 // establish toggle display of dieRow
   $('#d4Toggle').on('click', () => {
     $('.dieFourRow').toggle()
@@ -29,6 +53,12 @@ $ (() => {
   })
   $('#d8Toggle').on('click', () => {
     $('.dieEightRow').toggle()
+  })
+  $('#d10Toggle').on('click', () => {
+    $('.dieTenRow').toggle()
+  })
+  $('#d12Toggle').on('click', () => {
+    $('.dieTwelveRow').toggle()
   })
   $('#d20Toggle').on('click', () => {
     $('.dieTwentyRow').toggle()
@@ -118,6 +148,60 @@ $ (() => {
         $('#dieEightResultLog').prepend('<li>-</li>');
         let resultEight = resultEightArray.reduce(getSum, 0);
         $('#resultEight').text(resultEight);
+    })
+
+    // 8 Sided Die
+    generateRandomTen = () => {
+        return Math.floor((Math.random() * 10) + 1)
+      }
+
+    $('#die10').on('click', () => {
+      let repeater = $('#dieTenInput').val();
+      let resultTenArray = [];
+
+      // replace self to allow for new spin
+      let el = $('#die10');
+      let newone = el.clone(true);
+      el.replaceWith(newone);
+      // add spin class
+      $('#die10').addClass('buttonDieSpin');
+
+        for (let x = 0; x < repeater; x++) {
+            let dieTen = generateRandomTen();
+            resultTenArray.push(dieTen);
+            let listItem = $('<li>' + dieTen + '</li>')
+            $('#dieTenResultLog').prepend(listItem)
+        }
+        $('#dieTenResultLog').prepend('<li>-</li>');
+        let resultTen = resultTenArray.reduce(getSum, 0);
+        $('#resultTen').text(resultTen);
+    })
+
+    // 12 Sided Die
+    generateRandomTwelve = () => {
+        return Math.floor((Math.random() * 12) + 1)
+      }
+
+    $('#die12').on('click', () => {
+      let repeater = $('#dieTwelveInput').val();
+      let resultTwelveArray = [];
+
+      // replace self to allow for new spin
+      let el = $('#die12');
+      let newone = el.clone(true);
+      el.replaceWith(newone);
+      // add spin class
+      $('#die12').addClass('buttonDieSpin');
+
+        for (let x = 0; x < repeater; x++) {
+            let dieTwelve = generateRandomTwelve();
+            resultTwelveArray.push(dieTwelve);
+            let listItem = $('<li>' + dieTwelve + '</li>')
+            $('#dieTwelveResultLog').prepend(listItem)
+        }
+        $('#dieTwelveResultLog').prepend('<li>-</li>');
+        let resultTwelve = resultTwelveArray.reduce(getSum, 0);
+        $('#resultTwelve').text(resultTwelve);
     })
 
     // 20 Sided Die

@@ -44,10 +44,12 @@
         <div class="container">
           <h6 class="center">Click on dice to hide/show.</h6>
           <div class="row dieRow">
-            <img src="img/primary/d4.png" class="toggleImg" id="d4Toggle" height="10%" width="10%" alt="">
-            <img src="img/primary/d6.png" class="toggleImg" id="d6Toggle" height="10%" width="10%" alt="">
-            <img src="img/primary/d8.png" class="toggleImg" id="d8Toggle" height="10%" width="10%" alt="">
-            <img src="img/primary/d20.png" class="toggleImg" id="d20Toggle" height="10%" width="10%" alt="">
+            <img src="" class="toggleImg" id="d4Toggle" height="10%" width="10%" alt="">
+            <img src="" class="toggleImg" id="d6Toggle" height="10%" width="10%" alt="">
+            <img src="" class="toggleImg" id="d8Toggle" height="10%" width="10%" alt="">
+            <img src="" class="toggleImg" id="d10Toggle" height="10%" width="10%" alt="">
+            <img src="" class="toggleImg" id="d12Toggle" height="10%" width="10%" alt="">
+            <img src="" class="toggleImg" id="d20Toggle" height="10%" width="10%" alt="">
           </div>
           <div class="row titleRow">
             <div class="col">
@@ -72,7 +74,7 @@
               <input type="number" min="1" value="1" style="text-align:center;" name="dieFourInput" id="dieFourInput">
             </div>
             <div class="col">
-                <img src="img/primary/d4.png" id="die4" class="buttonDie" height="auto" width="100%" alt="" data-role="button">
+                <img src="" id="die4" class="buttonDie" height="auto" width="100%" alt="" data-role="button">
             </div>
             <div class="col">
               <ul id="dieFourResultLog" class="resultLog">
@@ -90,7 +92,7 @@
               <input type="number" min="1" value="1" style="text-align:center;" name="dieSixInput" id="dieSixInput">
             </div>
             <div class="col">
-                <img src="img/primary/d6.png" id="die6" class="buttonDie" height="auto" width="100%" alt="" data-role="button">
+                <img src="" id="die6" class="buttonDie" height="auto" width="100%" alt="" data-role="button">
             </div>
             <div class="col">
               <ul id="dieSixResultLog" class="resultLog">
@@ -106,7 +108,7 @@
               <input type="number" min="1" value="1" style="text-align:center;" name="dieEightInput" id="dieEightInput">
             </div>
             <div class="col">
-                <img src="img/primary/d8.png" id="die8" class="buttonDie" height="auto" width="100%" alt="" data-role="button">
+                <img src="" id="die8" class="buttonDie" height="auto" width="100%" alt="" data-role="button">
             </div>
             <div class="col">
               <ul id="dieEightResultLog" class="resultLog">
@@ -117,12 +119,44 @@
             </div>
           </div>
 
+          <div class="row dieTenRow">
+            <div class="col">
+              <input type="number" min="1" value="1" style="text-align:center;" name="dieTenInput" id="dieTenInput">
+            </div>
+            <div class="col">
+                <img src="" id="die10" class="buttonDie" height="auto" width="100%" alt="" data-role="button">
+            </div>
+            <div class="col">
+              <ul id="dieTenResultLog" class="resultLog">
+              </ul>
+            </div>
+            <div class="col" >
+              Result: <span id="resultTen"></span>
+            </div>
+          </div>
+
+          <div class="row dieTwelveRow">
+            <div class="col">
+              <input type="number" min="1" value="1" style="text-align:center;" name="dieTwelveInput" id="dieTwelveInput">
+            </div>
+            <div class="col">
+                <img src="" id="die12" class="buttonDie" height="auto" width="100%" alt="" data-role="button">
+            </div>
+            <div class="col">
+              <ul id="dieTwelveResultLog" class="resultLog">
+              </ul>
+            </div>
+            <div class="col" >
+              Result: <span id="resultTwelve"></span>
+            </div>
+          </div>
+
           <div class="row dieTwentyRow">
             <div class="col">
               <input type="number" min="1" value="1" style="text-align:center;" name="dieTwentyInput" id="dieTwentyInput">
             </div>
             <div class="col">
-                <img src="img/primary/d20.png" id="die20" class="buttonDie" height="auto" width="100%" alt="" data-role="button">
+                <img src="" id="die20" class="buttonDie" height="auto" width="100%" alt="" data-role="button">
             </div>
             <div class="col">
               <ul id="dieTwentyResultLog" class="resultLog">
@@ -132,25 +166,6 @@
               Result: <span id="resultTwenty"></span>
             </div>
           </div>
-
-          <!-- <div class="row">
-            <div class="col">
-              <input type="number" name="die_Input" id="die_Input">
-            </div>
-            <div class="col">
-              <button id="die_Button">
-                <img src="img/d_.png" height="50%" width="50%" alt="">
-                Roll _
-              </button>
-            </div>
-            <div class="col">
-              <ul id="die_ResultLog" class="resultLog">
-              </ul>
-            </div>
-            <div class="col" >
-              Result: <span id="result_"></span>
-            </div>
-          </div> -->
 
         </div>
       </div>
