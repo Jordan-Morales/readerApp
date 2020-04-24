@@ -55,6 +55,7 @@ if (localStorage && localStorage.getItem("themeSelected")) {
   themeSetter();
 } else if (localStorage){
   localStorage.setItem("themeSelected", "primary");
+  themeSetter();
 } else {
   // Sorry! No Web Storage support..
   // console.log("Local storage not working.");
